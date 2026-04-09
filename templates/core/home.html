@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home/home.css' %}">
+
+
+
+{% comment %} hero section {% endcomment %}
+
+<section class="hero">
+    
+    <div class="hero-text">
+        <h1>{{ hero.greeting }} {{ hero.name }} 👋</h1>
+        <p>{{ hero.tagline }}</p>
+        <p>{{ hero.description }}</p>
+        <a href="#project" class="btn-hero">View Projects</a>
+    </div>
+
+    <div class="hero-img">
+        <img src="{% static 'images/profile.jpg' %}" class="profile-img" alt="profile">
+    </div>
+
+</section>
+
+
+
+
+
+{% comment %} skill section {% endcomment %}
+
+<section class="skills-section">
+    <h2 class="section-title">My Skills</h2>
+    <div class="skills-container">
+
+{% for skill in skills %}
+<div class="skill-card">
+    <h3>{{ skill.name }}</h3>
+    <p>{{ skill.description }}</p>
+</div>
+{% endfor %}
+    </div>
+</section>
+
+
+
+
+{% comment %} project section {% endcomment %}
+
+<section class="projects">
+
+    <h2 class="project-title">Featured Projects</h2>
+
+    <div class="project-grid">
+
+        {% for project in projects %}
+        <div class="project-box">
+            <div class="project-content">
+
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+
+                <div class="project-links">
+                    {% if project.live_link %}
+                        <a href="{{ project.live_link }}">Live</a>
+                    {% endif %}
+
+                    {% if project.github_link %}
+                        <a href="{{ project.github_link }}">GitHub</a>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<script src="{% static 'js/home/home.js' %}"></script>
+
+{% endblock %}
+
+
+

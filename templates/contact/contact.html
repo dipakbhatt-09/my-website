@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/contact/contact.css' %}">
+<section class="contact">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out for collaborations</p>
+
+    <div class="contact-box">
+
+{% if messages %}
+    {% for message in messages %}
+      <p style="color: green;">{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+      
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <div class="info-item">
+          <h4>Email</h4>
+          <p>example@email.com</p>
+        </div>
+        <div class="info-item">
+          <h4>Phone</h4>
+          <p>+977 98XXXXXXXX</p>
+        </div>
+        <div class="info-item">
+          <h4>Location</h4>
+          <p>Kathmandu, Nepal</p>
+        </div>
+      </div>
+
+      
+      <!-- Contact Form -->
+
+<form method="POST" class="contact-form">
+  {% csrf_token %}
+
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Message" required></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
+
+
+    </div>
+  </div>
+</section>
+<script src="{% static 'js/contact/contact.js' %}"></script>
+{% endblock %}

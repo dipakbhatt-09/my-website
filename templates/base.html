@@ -1,0 +1,60 @@
+
+{% load static %}
+
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DIPAK Portfolio</title><!-- CSS -->
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head><body> <header class="navbar"><div class="logo">
+    <img src="{% static 'images/logo.jpg' %}" alt="logo">
+    <h2>Dipak Bhatt</h2>
+</div>
+ <button class="menu-btn">
+    <i class="fas fa-bars"></i>
+  </button>
+<nav>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/skill/">Skills</a></li>
+        <li><a href="/project/">Projects</a></li>
+        <li><a href="/contact/">Contact</a></li>
+    </ul>
+</nav>
+
+</header><!--  PAGE CONTENT  --><main class="container">
+    {% block content %}
+    {% endblock %}
+</main><!-- FOOTER --><footer class="footer"><h3>Connect With Me</h3>
+
+
+
+<div class="social-icons">
+
+ <!-- Facebook -->
+    <a href="https://www.facebook.com/share/1KSzhp5N1o/" target="_blank">
+        <i class="fab fa-facebook"></i>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/dipak-bhatt-3761073b9 " target="_blank">
+        <i class="fab fa-linkedin"></i>
+    </a>
+</div>
+
+<p>© 2026 Dipak Bhatt.Built with Django. All rights reserved ❤️</p>
+
+</footer>
+</body>
+<script src="{% static 'js/base.js' %}"></script>
+</html>
+

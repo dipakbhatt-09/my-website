@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/project/project.css' %}">
+
+
+<section class="section projects">
+  <div class="container">
+    <h2>My Projects</h2>
+    <p>Some of the projects I have built. More will be added soon!</p>
+
+      <div class="projects-container">
+
+  {% for project in projects %}
+  <div class="project-card">
+
+    <div class="project-header">
+      <h4>{{ project.title }}</h4>
+    </div>
+
+    <div class="project-body">
+      <p>{{ project.description }}</p>
+
+      {% if project.live_link %}
+        <a href="{{ project.live_link }}">Live</a>
+      {% endif %}
+
+      {% if project.github_link %}
+        <a href="{{ project.github_link }}">GitHub</a>
+      {% endif %}
+
+    </div>
+
+  </div>
+  {% endfor %}
+</div>
+  </div>
+</section>
+<script src="{% static 'js/project/project.js' %}"></script>
+{% endblock %}
+
+
+

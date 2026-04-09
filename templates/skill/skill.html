@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/skill/skill.css' %}">
+
+
+<section class="section skills">
+  <div class="container">
+    <h2>My Skills</h2>
+    <p>Here are my technical skills with expertise level.</p>
+
+
+<div class="skills-container">
+    {% for skill in skills %}
+    <div class="skill">
+        <h4>{{ skill.name }}</h4>
+        <div class="skill-bar">
+            <div class="skill-level" style="width: {{ skill.level }}%;"></div>
+        </div>
+    </div>
+    {% endfor %}
+</div>  
+</section>
+<script src="{% static 'js/skill/skill.js' %}"></script>
+{% endblock %}
