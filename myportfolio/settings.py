@@ -78,12 +78,37 @@ WSGI_APPLICATION = 'myportfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'mydb_0ob6',
+#         'USER': 'mydb_0ob6_user',
+#         'PASSWORD': 'EdG0jeCbGYHAcGuWAmPEvmnHk9DgTYqE',
+#         'HOST': 'dpg-d7kbkf3bc2fs73809u50-a',
+#         'PORT': '5432',
+#     }
+# }
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(
+        os.environ.get(
+            "DATABASE_URL",
+            "postgresql://mydb_0ob6_user:EdG0jeCbGYHAcGuWAmPEvmnHk9DgTYqE@dpg-d7kbkf3bc2fs73809u50-a.oregon-postgres.render.com/mydb_0ob6"
+        )
+    )
 }
+
+
+
+# import dj_database_url
+
+# DATABASES = {
+#     'default': dj_database_url.parse(
+#         "postgresql://mydb_0ob6_user:EdG0jeCbGYHAcGuWAmPEvmnHk9DgTYqE@dpg-d7kbkf3bc2fs73809u50-a.oregon-postgres.render.com/mydb_0ob6"
+#     )
+# }
 
 
 # Password validation
