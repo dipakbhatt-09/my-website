@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-t0bylti10gd57nm#aq_3-2ho4crc2++7a8hy56_ezz3wj!s#$7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -79,15 +79,19 @@ WSGI_APPLICATION = 'myportfolio.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.parse(
-        os.environ.get(
-            "DATABASE_URL",
-            "postgresql://mydb_0ob6_user:EdG0jeCbGYHAcGuWAmPEvmnHk9DgTYqE@dpg-d7kbkf3bc2fs73809u50-a.oregon-postgres.render.com/mydb_0ob6"
-        )
+    'default': dj_database_url.config(
+        default=os.environ.get("DATABASE_URL")
     )
 }
 
-
+# DATABASES = {
+#     'default': dj_database_url.parse(
+#         os.environ.get(
+#             "DATABASE_URL",
+#             "postgresql://mydb_0ob6_user:EdG0jeCbGYHAcGuWAmPEvmnHk9DgTYqE@dpg-d7kbkf3bc2fs73809u50-a.oregon-postgres.render.com/mydb_0ob6"
+#         )
+#     )
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -123,7 +127,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
