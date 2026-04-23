@@ -78,18 +78,22 @@ WSGI_APPLICATION = 'myportfolio.wsgi.application'
 # Database
 import dj_database_url
 
+
+
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get("DATABASE_URL")
+        default=os.environ.get("DATABASE_URL", ""),
+        conn_max_age=600,
+        ssl_require=True
     )
 }
 
+
 # DATABASES = {
-#     'default': dj_database_url.parse(
-#         os.environ.get(
-#             "DATABASE_URL",
-#             "postgresql://mydb_0ob6_user:EdG0jeCbGYHAcGuWAmPEvmnHk9DgTYqE@dpg-d7kbkf3bc2fs73809u50-a.oregon-postgres.render.com/mydb_0ob6"
-#         )
+#     'default': dj_database_url.config(
+#         default=os.environ.get("DATABASE_URL", ""),
+#         conn_max_age=600,
+#         ssl_require=True
 #     )
 # }
 
