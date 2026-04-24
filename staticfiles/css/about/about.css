@@ -1,0 +1,82 @@
+
+/* about ko css */
+
+.about-section{
+    padding: 80px 10%;
+    background: #0b1220;
+    color: white;
+}
+
+/* main layout */
+.about-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/* TEXT SIDE */
+.about-content{
+    flex: 1;
+}
+
+.about-content h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about-content p{
+    font-size: 18px;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+/* IMAGE SIDE */
+.about-image{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* 👉 RIGHT SIDE */
+}
+
+/* PROFILE IMAGE */
+.about-image img{
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 4px solid #00aaff;
+
+    box-shadow:
+        0 0 20px #00aaff,
+        0 0 40px rgba(0,170,255,0.5);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+    .about-container{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .about-image{
+        justify-content: center;
+    }
+}
+
+
+
+
+/* Scroll animations for About Page */
+.about-content, .about-image img{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.about-content.show, .about-image img.show{
+    opacity: 1;
+    transform: translateY(0);
+}

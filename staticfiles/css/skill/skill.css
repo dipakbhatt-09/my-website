@@ -1,0 +1,58 @@
+
+.section.skills {
+  background-color: #000000; 
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section.skills h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.section.skills p {
+  color: #ccc;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+/* Skills container – grid layout */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Individual skill */
+.skill h4 {
+  margin-bottom: 10px;
+  color: #ff4c00; 
+  font-size: 18px;
+}
+
+/* Skill bar */
+.skill-bar {
+  width: 100%;
+  background-color: #222222; 
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-level {
+  height: 100%;
+  background-color: #ff4c00;
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+
+
+/* Add transition to skill bars  */
+.skill-level{
+    transition: width 1s ease-in-out, filter 0.3s ease;
+}
+
+
