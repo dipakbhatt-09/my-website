@@ -1,6 +1,5 @@
 
-
-/* base.html ko css  */
+/* base.html css  */
 
 *{
 margin:0;
@@ -166,11 +165,11 @@ body {
   }
 
   .nav-links.active {
-    display: flex; /* show when active */
+    display: flex; 
   }
 
   .menu-btn {
-    display: block; /* show button on mobile */
+    display: block; 
     font-size: 24px;
     background: none;
     border: none;
