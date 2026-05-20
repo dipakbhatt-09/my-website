@@ -1,6 +1,6 @@
 from django.db import models
 
-# 1️ Hero Section ko model
+# Hero Section model
 class Hero(models.Model):
     greeting = models.CharField(max_length=100, default="Hi, I'm")
     name = models.CharField(max_length=50)
@@ -12,8 +12,7 @@ class Hero(models.Model):
         return f"{self.name} Hero Section"
 
 
-
-# 2️ Skill Section ko model
+# Skill Section  model
 class Skill(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
@@ -23,7 +22,7 @@ class Skill(models.Model):
         return self.name
 
 
-# 3️ Projects Section ko model
+# Projects Section model
 class Project(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
@@ -36,7 +35,7 @@ class Project(models.Model):
         return self.title
 
 
-# 4️ About Section ko model
+# About Section model
 class About(models.Model):
     subtitle = models.CharField(max_length=100, default="Hi, I'm Dipak Bhatt")
     bio_1 = models.TextField()
