@@ -1,5 +1,5 @@
 
-/* about ko css */
+/* about css */
 
 .about-section{
     padding: 80px 10%;
@@ -36,7 +36,7 @@
 .about-image{
     flex: 1;
     display: flex;
-    justify-content: flex-end; /* 👉 RIGHT SIDE */
+    justify-content: flex-end; 
 }
 
 /* PROFILE IMAGE */
