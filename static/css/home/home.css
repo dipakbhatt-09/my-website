@@ -1,4 +1,4 @@
-/* home page ko css */
+/* home page  css */
 .hero{
     display:flex;
     align-items:center;
@@ -107,7 +107,6 @@
 
 /* project section */
 
-
 .projects{
     padding: 100px 10%;
     background: linear-gradient(180deg,#020617,#020617,#0f172a);
@@ -199,9 +198,6 @@
 }
 
 
-
-
-
 /* Hero text animation */
 .hero-text{
     opacity:0;
@@ -224,9 +220,6 @@
     opacity:1;
     transform: translateY(0);
 }
-
-
-
 
 
 .cv-btn {
